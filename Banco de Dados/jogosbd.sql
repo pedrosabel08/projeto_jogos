@@ -54,7 +54,7 @@ ENGINE = InnoDB;
 -- Table `projeto_jogos`.`jogo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `projeto_jogos`.`jogo` (
-  `idjogo` INT NOT NULL,
+  `idjogo` INT NOT NULL AUTO_INCREMENT,
   `nomeJogo` VARCHAR(45) NOT NULL,
   `plataformaJogo` VARCHAR(45) NOT NULL,
   `precoJogo` VARCHAR(45) NOT NULL,
@@ -66,12 +66,14 @@ ENGINE = InnoDB;
 -- Table `projeto_jogos`.`funcionario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `projeto_jogos`.`funcionario` (
-  `idfuncionario` INT NOT NULL,
+  `idfuncionario` INT NOT NULL AUTO_INCREMENT,
   `nomeFuncionario` VARCHAR(45) NOT NULL,
   `cargoFuncionario` VARCHAR(45) NOT NULL,
   `telefoneFuncionario` VARCHAR(45) NOT NULL,
   `cpfFuncionario` VARCHAR(45) NOT NULL,
   `salarioFuncionario` VARCHAR(45) NOT NULL,
+  `usuario` VARCHAR(45) NOT NULL,
+  `senha` VARCHAR(45) NOT NULL,
   PRIMARY KEY (`idfuncionario`))
 ENGINE = InnoDB;
 
@@ -80,7 +82,7 @@ ENGINE = InnoDB;
 -- Table `projeto_jogos`.`venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `projeto_jogos`.`venda` (
-  `idvenda` INT NOT NULL,
+  `idvenda` INT NOT NULL AUTO_INCREMENT,
   `data` DATETIME NOT NULL,
   `valor` VARCHAR(45) NOT NULL,
   `cliente_idcliente` INT NOT NULL,
@@ -104,7 +106,8 @@ CREATE TABLE IF NOT EXISTS `projeto_jogos`.`venda` (
     ON UPDATE NO ACTION)
 ENGINE = InnoDB;
 
-
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+insert into Funcionario (nomeFuncionario, cargoFuncionario, telefoneFuncionario, cpfFuncionario, salarioFuncionario, usuario, senha) values ('Pedro', 'Atendente', '47999160344', '08893313910', '12000', 'pedrosabel08', 'pedro.amor0808');
