@@ -43,5 +43,3 @@ constraint fk_Venda_Jogo foreign key (idJogo) references jogosbd.Jogo (idJogo),
 constraint fk_Venda_Funcionario foreign key (idFuncionario) references jogosbd.Funcionario (idFuncionario),
 constraint fk_Venda_Cliente foreign key (idCliente) references jogosbd.Cliente (idCliente)
 );
-
-insert into Funcionario (nomeFuncionario, telefoneFuncionario,  cargoFuncionario, salarioFuncionario, cpfFuncionario, usuario, senha) values ("Pedro","47999160344", "Atendente", 5000, "08893313910", "pedrosabel08", "pedro.amor0808");
