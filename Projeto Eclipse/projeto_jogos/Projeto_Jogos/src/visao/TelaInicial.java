@@ -109,6 +109,7 @@ public class TelaInicial extends JFrame {
 			public void actionPerformed(ActionEvent e) {
 				TelaInicio TI = new TelaInicio();
 				TI.setVisible(true);
+				TI.setLocationRelativeTo(null);
 				setVisible(false);
 			}
 		});
