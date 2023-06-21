@@ -67,15 +67,11 @@ CREATE TABLE IF NOT EXISTS `jogosbd`.`venda` (
   `dataVenda` DATETIME NOT NULL,
   `valorVenda` DOUBLE NULL DEFAULT NULL,
   `idJogo` INT NOT NULL,
-  `idFuncionario` INT NOT NULL,
   `idCliente` INT NOT NULL,
   PRIMARY KEY (`idVenda`),
   CONSTRAINT `fk_Venda_Cliente`
     FOREIGN KEY (`idCliente`)
     REFERENCES `jogosbd`.`cliente` (`idCliente`),
-  CONSTRAINT `fk_Venda_Funcionario`
-    FOREIGN KEY (`idFuncionario`)
-    REFERENCES `jogosbd`.`funcionario` (`idFuncionario`),
   CONSTRAINT `fk_Venda_Jogo`
     FOREIGN KEY (`idJogo`)
     REFERENCES `jogosbd`.`jogo` (`idJogo`))
@@ -86,5 +82,3 @@ DEFAULT CHARACTER SET = utf8mb4;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
-
-insert into Jogo (nomeJogo, plataforma, qtd, valor) values ("Fornite", "PC", 2, 60);
