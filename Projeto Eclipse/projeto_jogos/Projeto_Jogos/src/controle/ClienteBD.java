@@ -18,7 +18,7 @@ public class ClienteBD {
 	ArrayList<Cliente> lista = new ArrayList<>();
 	
 	public ArrayList <Cliente> pesquisarCliente(){
-		String sql = "select idCliente, nomeCliente, telefoneCliente, qtdJogosVendidos, valorTotal, j.nomeJogo from Cliente c inner join Jogos j on c.jogo_idJogo = j.idJogo";
+		String sql = "select * from Cliente";
 
 		conn = new Conexao().faz_conexao();
 
@@ -34,7 +34,6 @@ public class ClienteBD {
 				cliente.setTelefone(rs.getString("telefoneCliente"));
 				cliente.setQtd(rs.getInt("qtdJogosVendidos"));
 				cliente.setValor(rs.getDouble("valorTotal"));
-				cliente.setJogo(rs.getString("j.nomeJogo"));
 
 				lista.add(cliente);
 
@@ -46,7 +45,7 @@ public class ClienteBD {
 	}
 	
 	public void cadastrarCliente(Cliente cliente) {
-		String sql = "insert into Cliente (nomeCliente, telefoneCliente, cpfCliente, qtdJogosVendidos, valorTotal, idJogo) values (?,?,?,?,?,?)";
+		String sql = "insert into Cliente (nomeCliente, telefoneCliente, cpfCliente, qtdJogosVendidos, valorTotal) values (?,?,?,?,?)";
 		
 		conn = new Conexao().faz_conexao();
 		
@@ -58,7 +57,6 @@ public class ClienteBD {
 			stmt.setString(3, cliente.getCpf());
 			stmt.setInt(4, cliente.getQtd());
 			stmt.setDouble(5, cliente.getValor());
-			stmt.setInt(6, cliente.getIdJogo());
 			
 			stmt.execute();
 			stmt.close();
