@@ -21,33 +21,24 @@ USE `jogosbd` ;
 -- Table `jogosbd`.`jogo`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jogosbd`.`jogo` (
-  `idJogo` INT(11) NOT NULL AUTO_INCREMENT,
+  `idJogo` INT NOT NULL AUTO_INCREMENT,
   `nomeJogo` VARCHAR(50) NOT NULL,
   `plataforma` VARCHAR(50) NOT NULL,
-  `valor` DOUBLE NULL DEFAULT NULL,
-  `qtd` INT(11) NULL DEFAULT NULL,
+  `qtd` INT NOT NULL ,
+  `valor` DOUBLE NOT NULL,
   PRIMARY KEY (`idJogo`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
-
 
 -- -----------------------------------------------------
 -- Table `jogosbd`.`cliente`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jogosbd`.`cliente` (
-  `idCliente` INT(11) NOT NULL AUTO_INCREMENT,
+  `idCliente` INT NOT NULL AUTO_INCREMENT,
   `nomeCliente` VARCHAR(50) NOT NULL,
   `cpfCliente` VARCHAR(50) NOT NULL,
   `telefoneCliente` VARCHAR(50) NOT NULL,
-  `qtdJogosVendidos` INT(11) NULL DEFAULT NULL,
-  `valorTotal` DOUBLE NULL DEFAULT NULL,
-  `jogo_idJogo` INT(11) NOT NULL,
-  PRIMARY KEY (`idCliente`, `jogo_idJogo`),
-  CONSTRAINT `fk_cliente_jogo1`
-    FOREIGN KEY (`jogo_idJogo`)
-    REFERENCES `jogosbd`.`jogo` (`idJogo`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+  PRIMARY KEY (`idCliente`))
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
@@ -56,11 +47,11 @@ DEFAULT CHARACTER SET = utf8mb4;
 -- Table `jogosbd`.`funcionario`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jogosbd`.`funcionario` (
-  `idFuncionario` INT(11) NOT NULL AUTO_INCREMENT,
+  `idFuncionario` INT NOT NULL AUTO_INCREMENT,
   `nomeFuncionario` VARCHAR(50) NOT NULL,
   `telefoneFuncionario` VARCHAR(50) NOT NULL,
   `cargoFuncionario` VARCHAR(50) NOT NULL,
-  `salarioFuncionario` DOUBLE NULL DEFAULT NULL,
+  `salarioFuncionario` DOUBLE NOT NULL,
   `cpfFuncionario` VARCHAR(50) NOT NULL,
   `usuario` VARCHAR(50) NOT NULL,
   `senha` VARCHAR(50) NOT NULL,
@@ -68,17 +59,16 @@ CREATE TABLE IF NOT EXISTS `jogosbd`.`funcionario` (
 ENGINE = InnoDB
 DEFAULT CHARACTER SET = utf8mb4;
 
-
 -- -----------------------------------------------------
 -- Table `jogosbd`.`venda`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `jogosbd`.`venda` (
-  `idVenda` INT(11) NOT NULL AUTO_INCREMENT,
+  `idVenda` INT NOT NULL AUTO_INCREMENT,
   `dataVenda` DATETIME NOT NULL,
   `valorVenda` DOUBLE NULL DEFAULT NULL,
-  `idJogo` INT(11) NOT NULL,
-  `idFuncionario` INT(11) NOT NULL,
-  `idCliente` INT(11) NOT NULL,
+  `idJogo` INT NOT NULL,
+  `idFuncionario` INT NOT NULL,
+  `idCliente` INT NOT NULL,
   PRIMARY KEY (`idVenda`),
   CONSTRAINT `fk_Venda_Cliente`
     FOREIGN KEY (`idCliente`)
@@ -96,3 +86,5 @@ DEFAULT CHARACTER SET = utf8mb4;
 SET SQL_MODE=@OLD_SQL_MODE;
 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
+
+insert into Jogo (nomeJogo, plataforma, qtd, valor) values ("Fornite", "PC", 2, 60);
