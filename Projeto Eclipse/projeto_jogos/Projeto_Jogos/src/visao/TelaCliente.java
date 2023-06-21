@@ -127,8 +127,6 @@ public class TelaCliente extends JFrame {
                     txtNome.setText(tabelaCliente.getValueAt(row, 1).toString());
                     txtTelefone.setText(tabelaCliente.getValueAt(row, 2).toString());
                     txtCpf.setText(tabelaCliente.getValueAt(row, 3).toString());
-                    txtQuantidade.setText(tabelaCliente.getValueAt(row, 4).toString());
-                    txtValor.setText(tabelaCliente.getValueAt(row, 5).toString());
                 }
             }
         });

@@ -76,7 +76,7 @@ public class FuncionarioBD {
 	}
 	
 	public void alterarFuncionario(Funcionario funcionario) {
-		String sql = "update funcionario set nomeFuncionario = ?, telefoneFuncionario = ?, cargoFuncionario = ?, salarioFuncionario = ?, cpfFuncionario = ? where idFuncionario = ?";
+		String sql = "update funcionario set nomeFuncionario = ?, telefoneFuncionario = ?, cargoFuncionario = ?, salarioFuncionario = ?, cpfFuncionario = ?, usuario = ?, senha = ? where idFuncionario = ?";
 		
 		conn = new Conexao().faz_conexao();
 		
