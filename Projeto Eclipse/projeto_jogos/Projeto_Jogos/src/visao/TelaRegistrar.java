@@ -5,6 +5,7 @@ import java.awt.EventQueue;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
+import javax.swing.text.MaskFormatter;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 
@@ -12,7 +13,10 @@ import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
 import javax.swing.JButton;
+import javax.swing.JFormattedTextField;
+
 import java.awt.event.ActionListener;
+import java.text.ParseException;
 import java.awt.event.ActionEvent;
 import controle.FuncionarioBD;
 import modelo.Funcionario;
@@ -21,10 +25,10 @@ public class TelaRegistrar extends JFrame {
 	private JPanel contentPane;
 	private JTextField txtNome;
 	private JTextField txtCargo;
-	private JTextField txtCPF;
+	private JFormattedTextField txtCPF;
 	private JTextField txtUsuario;
 	private JTextField txtSenha;
-	private JTextField txtTelefone;
+	private JFormattedTextField txtTelefone;
 
 	/**
 	 * Launch the application.
@@ -88,11 +92,20 @@ public class TelaRegistrar extends JFrame {
 		lblNewLabel_1_2.setBounds(10, 368, 464, 34);
 		contentPane.add(lblNewLabel_1_2);
 		
-		txtCPF = new JTextField();
+		txtCPF = new JFormattedTextField();
 		txtCPF.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtCPF.setColumns(10);
 		txtCPF.setBounds(10, 403, 464, 34);
 		contentPane.add(txtCPF);
+		
+		MaskFormatter maskCPF;
+		try {
+			maskCPF = new MaskFormatter("###.###.###-##");
+			maskCPF.install(txtCPF);
+		} catch (ParseException e1) {
+			
+			e1.printStackTrace();
+		}
 		
 		JLabel lblNewLabel_1_3 = new JLabel("Usuario:");
 		lblNewLabel_1_3.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
@@ -157,10 +170,19 @@ public class TelaRegistrar extends JFrame {
 		lblNewLabel_1_1_1.setBounds(10, 178, 464, 34);
 		contentPane.add(lblNewLabel_1_1_1);
 		
-		txtTelefone = new JTextField();
+		txtTelefone = new JFormattedTextField();
 		txtTelefone.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtTelefone.setColumns(10);
 		txtTelefone.setBounds(10, 213, 464, 34);
 		contentPane.add(txtTelefone);
+		
+		MaskFormatter maskTelefone;
+		try {
+			maskTelefone = new MaskFormatter("(##)#####-####");
+			maskTelefone.install(txtTelefone);
+		} catch (ParseException e1) {
+			
+			e1.printStackTrace();
+		}
 	}
 }

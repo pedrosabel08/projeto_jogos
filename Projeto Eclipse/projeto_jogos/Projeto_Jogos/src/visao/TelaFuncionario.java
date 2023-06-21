@@ -444,7 +444,7 @@ public class TelaFuncionario extends JFrame {
 		contentPane.add(txtSenha);}
 
 	private void CadastrarFuncionario() {
-		String nome, telefone, cargo, cpf;
+		String nome, telefone, cargo, cpf, usuario, senha;
 		double salario;
 		int numero;
 
@@ -453,6 +453,8 @@ public class TelaFuncionario extends JFrame {
 		cargo = txtCargo.getText();
 		salario = Double.parseDouble(txtSalario.getText());
 		cpf = txtCpf.getText();
+		usuario = txtUsuario.getText();
+		senha = txtSenha.getText();
 
 		Funcionario funcionario = new Funcionario();
 		funcionario.setNome(nome);
@@ -460,6 +462,8 @@ public class TelaFuncionario extends JFrame {
 		funcionario.setCargo(cargo);
 		funcionario.setSalario(salario);
 		funcionario.setCpf(cpf);
+		funcionario.setUsuario(usuario);
+		funcionario.setSenha(senha);
 
 		FuncionarioBD funcionarioBD = new FuncionarioBD();
 		funcionarioBD.cadastrarFuncionario(funcionario);
@@ -471,10 +475,12 @@ public class TelaFuncionario extends JFrame {
 		txtCargo.setText("");
 		txtSalario.setText("");
 		txtCpf.setText("");
+		txtUsuario.setText("");
+		txtSenha.setText("");
 	}
 	private void AlterarFuncionario() {
 		int id;
-		String nome, telefone, cargo, cpf;
+		String nome, telefone, cargo, cpf, usuario, senha;
 		double salario;
 
 		id = Integer.parseInt(txtId.getText());
@@ -483,6 +489,8 @@ public class TelaFuncionario extends JFrame {
 		cargo = txtCargo.getText();
 		salario = Double.parseDouble(txtSalario.getText());
 		cpf = txtCpf.getText();
+		usuario = txtUsuario.getText();
+		senha = txtSenha.getText();
 
 		Funcionario funcionario = new Funcionario();
 		funcionario.setId(id);
@@ -491,6 +499,8 @@ public class TelaFuncionario extends JFrame {
 		funcionario.setCargo(cargo);
 		funcionario.setSalario(salario);
 		funcionario.setCpf(cpf);
+		funcionario.setUsuario(usuario);
+		funcionario.setSenha(senha);
 
 		FuncionarioBD funcionarioBD = new FuncionarioBD();
 		funcionarioBD.alterarFuncionario(funcionario);
