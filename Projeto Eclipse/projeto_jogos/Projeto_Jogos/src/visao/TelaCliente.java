@@ -54,7 +54,7 @@ public class TelaCliente extends JFrame {
 		EventQueue.invokeLater(new Runnable() {
 			public void run() {
 				try {
-					TelaFuncionario frame = new TelaFuncionario();
+					TelaCliente frame = new TelaCliente();
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -92,7 +92,7 @@ public class TelaCliente extends JFrame {
 			new Object[][] {
 			},
 			new String[] {
-				"ID", "Nome", "Telefone", "CPF", "Quantidade", "Valor Total"
+				"ID", "Nome", "Telefone", "CPF"
 			}
 		));
 		scrollPane.setViewportView(tabelaCliente);
@@ -110,8 +110,6 @@ public class TelaCliente extends JFrame {
 						lista.get(num).getNome(),
 						lista.get(num).getTelefone(),
 						lista.get(num).getCpf(),
-						lista.get(num).getQtd(),
-						lista.get(num).getValor()
 
 				});
 			}
@@ -138,7 +136,7 @@ public class TelaCliente extends JFrame {
 		JPanel panel_2 = new JPanel();
 		panel_2.setBorder(new MatteBorder(3, 3, 3, 3, (Color) new Color(25, 25, 112)));
 		panel_2.setBackground(Color.DARK_GRAY);
-		panel_2.setBounds(544, 838, 60, 26);
+		panel_2.setBounds(628, 838, 60, 26);
 		contentPane.add(panel_2);
 		panel_2.setLayout(null);
 		JLabel lblNome = new JLabel("Nome");
@@ -153,14 +151,14 @@ public class TelaCliente extends JFrame {
 		txtNome.setForeground(Color.WHITE);
 		txtNome.setFont(new Font("Dialog", Font.BOLD, 12));
 		txtNome.setBackground(Color.DARK_GRAY);
-		txtNome.setBounds(544, 871, 145, 31);
+		txtNome.setBounds(628, 871, 145, 31);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JPanel panel = new JPanel();
 		panel.setBorder(new MatteBorder(3, 3, 3, 3, (Color) new Color(25, 25, 112)));
 		panel.setBackground(Color.DARK_GRAY);
-		panel.setBounds(748, 838, 82, 26);
+		panel.setBounds(924, 838, 82, 26);
 		contentPane.add(panel);
 		panel.setLayout(null);
 
@@ -176,7 +174,7 @@ public class TelaCliente extends JFrame {
 		txtTelefone.setForeground(Color.WHITE);
 		txtTelefone.setFont(new Font("Dialog", Font.BOLD, 12));
 		txtTelefone.setBackground(Color.DARK_GRAY);
-		txtTelefone.setBounds(748, 871, 145, 31);
+		txtTelefone.setBounds(924, 871, 145, 31);
 		contentPane.add(txtTelefone);
 		txtTelefone.setColumns(10);
 		
@@ -192,7 +190,7 @@ public class TelaCliente extends JFrame {
 		JPanel panel_5 = new JPanel();
 		panel_5.setBorder(new MatteBorder(3, 3, 3, 3, (Color) new Color(25, 25, 112)));
 		panel_5.setBackground(Color.DARK_GRAY);
-		panel_5.setBounds(956, 838, 69, 26);
+		panel_5.setBounds(1221, 838, 69, 26);
 		contentPane.add(panel_5);
 		panel_5.setLayout(null);
 
@@ -208,7 +206,7 @@ public class TelaCliente extends JFrame {
 		txtCpf.setForeground(Color.WHITE);
 		txtCpf.setFont(new Font("Dialog", Font.BOLD, 12));
 		txtCpf.setBackground(Color.DARK_GRAY);
-		txtCpf.setBounds(956, 871, 127, 31);
+		txtCpf.setBounds(1221, 871, 127, 31);
 		contentPane.add(txtCpf);
 		txtCpf.setColumns(10);
 		
@@ -342,53 +340,7 @@ public class TelaCliente extends JFrame {
 		btnNewButton_1.setFont(new Font("Dialog", Font.BOLD, 12));
 		btnNewButton_1.setBackground(Color.DARK_GRAY);
 		btnNewButton_1.setBounds(1609, 404, 188, 40);
-		contentPane.add(btnNewButton_1);
-		
-		JPanel panel_3 = new JPanel();
-		panel_3.setLayout(null);
-		panel_3.setBorder(new MatteBorder(3, 3, 3, 3, (Color) new Color(25, 25, 112)));
-		panel_3.setBackground(Color.DARK_GRAY);
-		panel_3.setBounds(1153, 838, 97, 26);
-		contentPane.add(panel_3);
-		
-		JLabel lblQuantidade = new JLabel("Quantidade");
-		lblQuantidade.setHorizontalAlignment(SwingConstants.CENTER);
-		lblQuantidade.setForeground(Color.WHITE);
-		lblQuantidade.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblQuantidade.setBackground(Color.DARK_GRAY);
-		lblQuantidade.setBounds(0, 0, 97, 26);
-		panel_3.add(lblQuantidade);
-		
-		JTextField txtQuantidade = new JTextField();
-		txtQuantidade.setForeground(Color.WHITE);
-		txtQuantidade.setFont(new Font("Dialog", Font.BOLD, 12));
-		txtQuantidade.setColumns(10);
-		txtQuantidade.setBackground(Color.DARK_GRAY);
-		txtQuantidade.setBounds(1153, 871, 145, 31);
-		contentPane.add(txtQuantidade);
-		
-		JPanel panel_4 = new JPanel();
-		panel_4.setLayout(null);
-		panel_4.setBorder(new MatteBorder(3, 3, 3, 3, (Color) new Color(25, 25, 112)));
-		panel_4.setBackground(Color.DARK_GRAY);
-		panel_4.setBounds(1344, 838, 97, 26);
-		contentPane.add(panel_4);
-		
-		JLabel lblValorTotal = new JLabel("Valor Total");
-		lblValorTotal.setHorizontalAlignment(SwingConstants.CENTER);
-		lblValorTotal.setForeground(Color.WHITE);
-		lblValorTotal.setFont(new Font("Dialog", Font.BOLD, 14));
-		lblValorTotal.setBackground(Color.DARK_GRAY);
-		lblValorTotal.setBounds(0, 0, 101, 26);
-		panel_4.add(lblValorTotal);
-		
-		JTextField txtValor = new JTextField();
-		txtValor.setForeground(Color.WHITE);
-		txtValor.setFont(new Font("Dialog", Font.BOLD, 12));
-		txtValor.setColumns(10);
-		txtValor.setBackground(Color.DARK_GRAY);
-		txtValor.setBounds(1344, 871, 145, 31);
-		contentPane.add(txtValor);}
+		contentPane.add(btnNewButton_1);}
 
 	private void CadastrarCliente() {
 		String nome, telefone, cpf;
@@ -398,16 +350,12 @@ public class TelaCliente extends JFrame {
 		nome = txtNome.getText();
 		telefone = txtTelefone.getText();
 		cpf = txtCpf.getText();
-		qtd = Integer.parseInt(txtQuantidade.getText());
-		valor = Double.parseDouble(txtValor.getText());
 		
 
 		Cliente cliente = new Cliente();
 		cliente.setNome(nome);
 		cliente.setTelefone(telefone);
 		cliente.setCpf(cpf);
-		cliente.setQtd(qtd);
-		cliente.setValor(valor);
 
 
 		ClienteBD clienteBD = new ClienteBD();
@@ -418,8 +366,6 @@ public class TelaCliente extends JFrame {
 		txtNome.setText("");
 		txtTelefone.setText("");
 		txtCpf.setText("");
-		txtQuantidade.setText("");
-		txtValor.setText("");
 	}
 	private void AlterarCliente() {
 		String nome, telefone, cpf;
@@ -430,17 +376,13 @@ public class TelaCliente extends JFrame {
 		nome = txtNome.getText();
 		telefone = txtTelefone.getText();
 		cpf = txtCpf.getText();
-		qtd = Integer.parseInt(txtQuantidade.getText());
-		valor = Double.parseDouble(txtValor.getText());
 
 		Cliente cliente = new Cliente();
 		cliente.setId(id);
 		cliente.setNome(nome);
 		cliente.setTelefone(telefone);
 		cliente.setCpf(cpf);
-		cliente.setQtd(qtd);
-		cliente.setValor(valor);
-
+		
 		ClienteBD clienteBD = new ClienteBD();
 		clienteBD.alterarCliente(cliente);
 	}
@@ -469,8 +411,6 @@ public class TelaCliente extends JFrame {
 						lista.get(num).getNome(),
 						lista.get(num).getTelefone(),
 						lista.get(num).getCpf(),
-						lista.get(num).getQtd(),
-						lista.get(num).getValor()
 
 				});
 			}

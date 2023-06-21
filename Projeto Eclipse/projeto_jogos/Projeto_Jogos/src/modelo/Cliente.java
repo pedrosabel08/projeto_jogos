@@ -1,27 +1,14 @@
 package modelo;
 
 public class Cliente {
-	private int id, qtd, idJogo;
-	private double valor;
-	private String nome, cpf, telefone, jogo;
+	private int id;
+	private String nome, cpf, telefone;
 	
 	public int getId() {
 		return id;
 	}
 	public void setId(int id) {
 		this.id = id;
-	}
-	public int getQtd() {
-		return qtd;
-	}
-	public void setQtd(int qtd) {
-		this.qtd = qtd;
-	}
-	public double getValor() {
-		return valor;
-	}
-	public void setValor(double valor) {
-		this.valor = valor;
 	}
 	public String getNome() {
 		return nome;
@@ -40,18 +27,6 @@ public class Cliente {
 	}
 	public void setTelefone(String telefone) {
 		this.telefone = telefone;
-	}
-	public String getJogo() {
-		return jogo;
-	}
-	public void setJogo(String jogo) {
-		this.jogo = jogo;
-	}
-	public int getIdJogo() {
-		return idJogo;
-	}
-	public void setIdJogo(int idJogo) {
-		this.idJogo = idJogo;
 	}
 	
 	
