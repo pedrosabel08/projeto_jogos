@@ -22,6 +22,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.awt.event.ActionEvent;
+import java.awt.Color;
+import javax.swing.ImageIcon;
 
 public class TelaLogin extends JFrame {
 
@@ -87,6 +89,7 @@ public class TelaLogin extends JFrame {
 		contentPane.add(lblNewLabel_1_3);
 		
 		JButton btnNewButton = new JButton("Login");
+		btnNewButton.setBackground(new Color(211, 211, 211));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				
@@ -129,6 +132,19 @@ public class TelaLogin extends JFrame {
 		btnNewButton.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		btnNewButton.setBounds(175, 362, 140, 40);
 		contentPane.add(btnNewButton);
+		
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(TelaLogin.class.getResource("/imagens/seta-para-tras.png")));
+		btnNewButton_1.setBackground(new Color(211, 211, 211));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaInicio TI = new TelaInicio();
+				TI.setVisible(true);
+				TI.setLocationRelativeTo(null);
+			}
+		});
+		btnNewButton_1.setFont(new Font("Source Sans Pro", Font.PLAIN, 13));
+		btnNewButton_1.setBounds(0, 0, 49, 29);
+		contentPane.add(btnNewButton_1);
 	}
-
 }

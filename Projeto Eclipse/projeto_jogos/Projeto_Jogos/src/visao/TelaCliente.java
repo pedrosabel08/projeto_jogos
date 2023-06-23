@@ -302,7 +302,8 @@ public class TelaCliente extends JFrame {
 		lblNewLabel_1.setBounds(434, 26, 1055, 63);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("<--");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(TelaCliente.class.getResource("/imagens/seta-para-tras.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaInicial frame = new TelaInicial();
