@@ -114,4 +114,22 @@ public class JogosBD {
 		}
 	}
 	
+	public Jogos diminuirEstoque(Jogos jogo) {
+		String sql = "update Jogo set qtd = qtd - 1 where idJogo = ?";
+		
+		conn = new Conexao().faz_conexao();
+		try {
+			stmt = conn.prepareStatement(sql);
+			stmt.setInt(1, jogo.getId());
+			
+			stmt.execute();
+			stmt.close();
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return jogo;
+		
+	}
+	
 }

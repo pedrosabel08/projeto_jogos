@@ -11,6 +11,7 @@ import javax.swing.border.MatteBorder;
 import javax.swing.table.DefaultTableModel;
 
 import controle.VendaBD;
+import controle.JogosBD;
 
 import javax.swing.JScrollPane;
 import javax.swing.JTable;
@@ -76,6 +77,7 @@ public class TelaVenda extends JFrame {
 	/**
 	 * Create the frame.
 	 */
+	JogosBD jogosBD = new JogosBD();
 	public TelaVenda() {
 		setUndecorated(true);
 		
@@ -99,7 +101,7 @@ public class TelaVenda extends JFrame {
 		tabelaVenda.setBorder(null);
 		tabelaVenda.setBackground(Color.DARK_GRAY);
 		tabelaVenda.setForeground(Color.WHITE);
-		tabelaVenda.setFont(new Font("Tahoma", Font.BOLD, 12));
+		tabelaVenda.setFont(new Font("Source Sans Pro", Font.PLAIN, 14));
 		DefaultTableModel model = new DefaultTableModel(
 			new Object[][] {
 			},
@@ -112,7 +114,7 @@ public class TelaVenda extends JFrame {
 		
 		JLabel lblNewLabel_1_2 = new JLabel("ID:");
 		lblNewLabel_1_2.setForeground(Color.BLACK);
-		lblNewLabel_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_2.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		lblNewLabel_1_2.setBounds(166, 334, 46, 14);
 		contentPane.add(lblNewLabel_1_2);
 		
@@ -121,7 +123,7 @@ public class TelaVenda extends JFrame {
 		txtIdJogo.setCaretColor(Color.WHITE);
 		txtIdJogo.setForeground(Color.WHITE);
 		txtIdJogo.setHorizontalAlignment(SwingConstants.CENTER);
-		txtIdJogo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtIdJogo.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtIdJogo.setEditable(false);
 		txtIdJogo.setColumns(10);
 		txtIdJogo.setBackground(Color.DARK_GRAY);
@@ -136,14 +138,14 @@ public class TelaVenda extends JFrame {
 				TJ.setVisible(true);
 			}
 		});
-		btnPesquisarJogo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnPesquisarJogo.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		btnPesquisarJogo.setBackground(Color.DARK_GRAY);
 		btnPesquisarJogo.setBounds(285, 323, 157, 37);
 		contentPane.add(btnPesquisarJogo);
 		
 		JLabel lblNewLabel_1_1 = new JLabel("ID:");
 		lblNewLabel_1_1.setForeground(Color.BLACK);
-		lblNewLabel_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_1_1.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		lblNewLabel_1_1.setBounds(166, 691, 46, 14);
 		contentPane.add(lblNewLabel_1_1);
 		
@@ -152,7 +154,7 @@ public class TelaVenda extends JFrame {
 		txtIdCliente.setCaretColor(Color.WHITE);
 		txtIdCliente.setMargin(new Insets(2, 6, 2, 2));
 		txtIdCliente.setHorizontalAlignment(SwingConstants.CENTER);
-		txtIdCliente.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtIdCliente.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtIdCliente.setEditable(false);
 		txtIdCliente.setColumns(10);
 		txtIdCliente.setBackground(Color.DARK_GRAY);
@@ -167,7 +169,7 @@ public class TelaVenda extends JFrame {
 			}
 		});
 		btnPesquisarCliente.setForeground(Color.WHITE);
-		btnPesquisarCliente.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		btnPesquisarCliente.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		btnPesquisarCliente.setBackground(Color.DARK_GRAY);
 		btnPesquisarCliente.setBounds(285, 680, 157, 37);
 		contentPane.add(btnPesquisarCliente);
@@ -176,7 +178,7 @@ public class TelaVenda extends JFrame {
 		txtNome.setForeground(Color.WHITE);
 		txtNome.setCaretColor(Color.WHITE);
 		txtNome.setMargin(new Insets(2, 6, 2, 2));
-		txtNome.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtNome.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtNome.setEditable(false);
 		txtNome.setColumns(10);
 		txtNome.setBackground(Color.DARK_GRAY);
@@ -185,13 +187,13 @@ public class TelaVenda extends JFrame {
 		
 		JLabel lblNewLabel_2_1 = new JLabel("Nome:");
 		lblNewLabel_2_1.setForeground(Color.BLACK);
-		lblNewLabel_2_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_1.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		lblNewLabel_2_1.setBackground(Color.WHITE);
 		lblNewLabel_2_1.setBounds(166, 733, 79, 14);
 		contentPane.add(lblNewLabel_2_1);
 		
 		JButton btnAdicionar = new JButton("Adicionar");
-		btnAdicionar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnAdicionar.setFont(new Font("Source Sans Pro", Font.PLAIN, 14));
 		btnAdicionar.setForeground(Color.WHITE);
 		btnAdicionar.setBackground(Color.DARK_GRAY);
 		btnAdicionar.addActionListener(new ActionListener() {
@@ -216,7 +218,7 @@ public class TelaVenda extends JFrame {
 		contentPane.add(btnAdicionar);
 		
 		JButton btnFinalizar = new JButton("Finalizar");
-		btnFinalizar.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnFinalizar.setFont(new Font("Source Sans Pro", Font.PLAIN, 14));
 		btnFinalizar.setForeground(Color.WHITE);
 		btnFinalizar.setBackground(Color.DARK_GRAY);
 		btnFinalizar.addActionListener(new ActionListener() {
@@ -232,6 +234,10 @@ public class TelaVenda extends JFrame {
 					String h =(dtf5.format(LocalDateTime.now()));
 					
 					Venda venda = new Venda();
+					jogosBD = new JogosBD();
+					Jogos jogo = new Jogos();
+					jogo.setId(Integer.valueOf(idJogo));
+					jogo = jogosBD.diminuirEstoque(jogo);
 					
 					venda.setCliente(Integer.valueOf(idCliente));
 					venda.setJogo(Integer.valueOf(idJogo));
@@ -242,7 +248,9 @@ public class TelaVenda extends JFrame {
 					venda.setData(h);
 					
 					VendaBD vendaBD = new VendaBD();
-					vendaBD.inserirVenda(venda);			
+					vendaBD.inserirVenda(venda);
+					
+
 					
 				}
 				while(tabelaVenda.getModel().getRowCount()>0) {
@@ -262,7 +270,7 @@ public class TelaVenda extends JFrame {
 		contentPane.add(btnFinalizar);
 		
 		JButton btnHistorico = new JButton("Historico");
-		btnHistorico.setFont(new Font("Tahoma", Font.BOLD, 12));
+		btnHistorico.setFont(new Font("Source Sans Pro", Font.PLAIN, 14));
 		btnHistorico.setForeground(Color.WHITE);
 		btnHistorico.setBackground(Color.DARK_GRAY);
 		btnHistorico.addActionListener(new ActionListener() {
@@ -285,7 +293,7 @@ public class TelaVenda extends JFrame {
 		JLabel lblJogo = new JLabel("Jogo");
 		lblJogo.setHorizontalAlignment(SwingConstants.CENTER);
 		lblJogo.setForeground(Color.WHITE);
-		lblJogo.setFont(new Font("Dialog", Font.BOLD, 18));
+		lblJogo.setFont(new Font("Source Sans Pro", Font.PLAIN, 18));
 		lblJogo.setBackground(Color.DARK_GRAY);
 		lblJogo.setBounds(0, 0, 157, 37);
 		panel_3.add(lblJogo);
@@ -300,36 +308,22 @@ public class TelaVenda extends JFrame {
 		JLabel lblCliente = new JLabel("Cliente");
 		lblCliente.setHorizontalAlignment(SwingConstants.CENTER);
 		lblCliente.setForeground(Color.WHITE);
-		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 18));
+		lblCliente.setFont(new Font("Source Sans Pro", Font.PLAIN, 18));
 		lblCliente.setBackground(Color.DARK_GRAY);
 		lblCliente.setBounds(0, 0, 157, 37);
 		panel_3_1.add(lblCliente);
 		
-		JButton btnVoltar = new JButton("Voltar");
-		btnVoltar.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				TelaInicial frame = new TelaInicial();
-				frame.setVisible(true);
-				dispose();
-			}
-		});
-		btnVoltar.setForeground(Color.WHITE);
-		btnVoltar.setBackground(Color.DARK_GRAY);
-		btnVoltar.setFont(new Font("Tahoma", Font.BOLD, 12));
-		btnVoltar.setBounds(10, 11, 79, 37);
-		contentPane.add(btnVoltar);
-		
 		JLabel lblNewLabel = new JLabel("Venda");
 		lblNewLabel.setHorizontalAlignment(SwingConstants.CENTER);
 		lblNewLabel.setForeground(Color.BLACK);
-		lblNewLabel.setFont(new Font("Tahoma", Font.BOLD, 25));
+		lblNewLabel.setFont(new Font("Source Sans Pro", Font.PLAIN, 25));
 		lblNewLabel.setBounds(742, 149, 747, 78);
 		contentPane.add(lblNewLabel);
 		
 		
 		JLabel lblNewLabel_2_1_1 = new JLabel("Nome:");
 		lblNewLabel_2_1_1.setForeground(Color.BLACK);
-		lblNewLabel_2_1_1.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_1_1.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		lblNewLabel_2_1_1.setBackground(Color.WHITE);
 		lblNewLabel_2_1_1.setBounds(166, 385, 79, 14);
 		contentPane.add(lblNewLabel_2_1_1);
@@ -337,7 +331,7 @@ public class TelaVenda extends JFrame {
 		txtNomeJogo = new JTextField();
 		txtNomeJogo.setMargin(new Insets(2, 6, 2, 2));
 		txtNomeJogo.setForeground(Color.WHITE);
-		txtNomeJogo.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtNomeJogo.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtNomeJogo.setEditable(false);
 		txtNomeJogo.setColumns(10);
 		txtNomeJogo.setCaretColor(Color.WHITE);
@@ -347,7 +341,7 @@ public class TelaVenda extends JFrame {
 		
 		JLabel lblNewLabel_2_1_2 = new JLabel("Plataforma:");
 		lblNewLabel_2_1_2.setForeground(Color.BLACK);
-		lblNewLabel_2_1_2.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_1_2.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		lblNewLabel_2_1_2.setBackground(Color.WHITE);
 		lblNewLabel_2_1_2.setBounds(166, 432, 79, 14);
 		contentPane.add(lblNewLabel_2_1_2);
@@ -355,7 +349,7 @@ public class TelaVenda extends JFrame {
 		txtPlataforma = new JTextField();
 		txtPlataforma.setMargin(new Insets(2, 6, 2, 2));
 		txtPlataforma.setForeground(Color.WHITE);
-		txtPlataforma.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtPlataforma.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtPlataforma.setEditable(false);
 		txtPlataforma.setColumns(10);
 		txtPlataforma.setCaretColor(Color.WHITE);
@@ -365,7 +359,7 @@ public class TelaVenda extends JFrame {
 		
 		JLabel lblNewLabel_2_1_3 = new JLabel("Valor:");
 		lblNewLabel_2_1_3.setForeground(Color.BLACK);
-		lblNewLabel_2_1_3.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		lblNewLabel_2_1_3.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		lblNewLabel_2_1_3.setBackground(Color.WHITE);
 		lblNewLabel_2_1_3.setBounds(166, 483, 79, 14);
 		contentPane.add(lblNewLabel_2_1_3);
@@ -373,7 +367,7 @@ public class TelaVenda extends JFrame {
 		txtValor = new JTextField();
 		txtValor.setMargin(new Insets(2, 6, 2, 2));
 		txtValor.setForeground(Color.WHITE);
-		txtValor.setFont(new Font("Tahoma", Font.PLAIN, 14));
+		txtValor.setFont(new Font("Source Sans Pro", Font.PLAIN, 15));
 		txtValor.setEditable(false);
 		txtValor.setColumns(10);
 		txtValor.setCaretColor(Color.WHITE);
@@ -381,7 +375,19 @@ public class TelaVenda extends JFrame {
 		txtValor.setBounds(228, 480, 214, 25);
 		contentPane.add(txtValor);
 		
-		
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(TelaLogin.class.getResource("/imagens/seta-para-tras.png")));
+		btnNewButton_1.setBackground(new Color(211, 211, 211));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaInicio TI = new TelaInicio();
+				TI.setVisible(true);
+				TI.setLocationRelativeTo(null);
+			}
+		});
+		btnNewButton_1.setFont(new Font("Source Sans Pro", Font.PLAIN, 13));
+		btnNewButton_1.setBounds(0, 0, 49, 29);
+		contentPane.add(btnNewButton_1);
 		
 	}
 }
