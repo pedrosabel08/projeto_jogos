@@ -359,7 +359,8 @@ public class TelaFuncionario extends JFrame {
 		lblNewLabel_1.setBounds(434, 26, 1055, 63);
 		contentPane.add(lblNewLabel_1);
 		
-		JButton btnNewButton = new JButton("<--");
+		JButton btnNewButton = new JButton("");
+		btnNewButton.setIcon(new ImageIcon(TelaFuncionario.class.getResource("/imagens/seta-para-tras.png")));
 		btnNewButton.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				TelaInicial frame = new TelaInicial();
@@ -369,7 +370,7 @@ public class TelaFuncionario extends JFrame {
 		});
 		btnNewButton.setForeground(Color.WHITE);
 		btnNewButton.setFont(new Font("Dialog", Font.BOLD, 12));
-		btnNewButton.setBackground(Color.DARK_GRAY);
+		btnNewButton.setBackground(new Color(255, 255, 255));
 		btnNewButton.setBounds(1505, 128, 56, 37);
 		contentPane.add(btnNewButton);
 		

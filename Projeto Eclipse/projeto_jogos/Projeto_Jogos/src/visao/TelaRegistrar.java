@@ -1,5 +1,6 @@
 package visao;
 
+import java.awt.Color;
 import java.awt.EventQueue;
 
 import javax.swing.JFrame;
@@ -12,6 +13,7 @@ import javax.swing.JOptionPane;
 import java.awt.Font;
 import javax.swing.SwingConstants;
 import javax.swing.JTextField;
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFormattedTextField;
 
@@ -184,5 +186,19 @@ public class TelaRegistrar extends JFrame {
 			
 			e1.printStackTrace();
 		}
+		
+		JButton btnNewButton_1 = new JButton("");
+		btnNewButton_1.setIcon(new ImageIcon(TelaLogin.class.getResource("/imagens/seta-para-tras.png")));
+		btnNewButton_1.setBackground(new Color(211, 211, 211));
+		btnNewButton_1.addActionListener(new ActionListener() {
+			public void actionPerformed(ActionEvent e) {
+				TelaInicio TI = new TelaInicio();
+				TI.setVisible(true);
+				TI.setLocationRelativeTo(null);
+			}
+		});
+		btnNewButton_1.setFont(new Font("Source Sans Pro", Font.PLAIN, 13));
+		btnNewButton_1.setBounds(0, 0, 49, 29);
+		contentPane.add(btnNewButton_1);
 	}
 }
